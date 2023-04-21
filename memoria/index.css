@@ -1,0 +1,532 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Montserrat', sans-serif;
+}
+
+body {
+  background-color: #1c1c1c;
+}
+
+:root {
+  --cor-primaria: #f43c4c;
+}
+
+.logo-img {
+  width: 100%;
+  text-align: center;
+  padding: 1rem;
+}
+
+.logo-img img {
+  width: 60%;
+}
+
+#memory-game {
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: calc(100vh - 92px);
+}
+
+#img-start {
+  position: absolute;
+  width: 50%;
+  transition: all .6s ease-out;
+  z-index: 55;
+}
+
+#img-winner {
+  position: absolute;
+  width: 80%;
+  height: 80%;
+  opacity: 0;
+  transition: all 1s ease-in-out;
+}
+
+.board-box {
+  position: relative;
+  height: 48vh;
+}
+
+.board {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100vw;
+  /* height: 100%; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  margin: 0 auto;
+}
+
+.tile {
+  position: relative;
+  width: 21vw;
+  height: 65px;
+  margin: 4px;
+  background-color: #555555e1;
+  border-radius: 10px;
+  box-shadow: 2px 2px 5px #000000ae;
+}
+
+.tile span {
+  opacity: 0;
+  /* transition: all 1s; */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 16px;
+}
+
+.tile span img {
+  width: 20vw;
+  height: 61px;
+  border-radius: 10px;
+}
+
+.btn-start {
+  background-color: #f43c4c;
+  color: #fff;
+  border: none;
+  border-radius: 20px;
+  margin-top: 1rem;
+  padding: 12px 24px;
+  font-size: 14px;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.btn-start:hover {
+  background-color: #FF5967;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  transform: translateY(-2px);
+}
+
+form {
+  width: 100%;
+}
+
+input[type="text"] {
+  position: absolute;
+  left: 165px;
+  bottom: 15px;
+  width: 50%;
+  font-size: 1rem;
+  padding: 0.5rem;
+  border: none;
+  border-radius: 0.5rem;
+  background-color: #555555e1;
+  color: #fff;
+  box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.1);
+  transition: all 0.2s ease-in-out;
+}
+
+input[type="text"]:focus {
+  outline: none;
+  box-shadow: 0 0 0.8rem var(--cor-primaria);
+}
+
+label {
+  /* position: absolute; */
+  display: block;
+  margin-bottom: 1.25rem;
+  margin-left: -55%;
+  font-size: 1rem;
+  font-weight: bold;
+  color: var(--cor-primaria);
+}
+
+.my-input-group {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.1);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+label[for="jogador2"]:focus,
+input[name="jogador2"]:focus {
+  animation: pulse 1s ease-in-out infinite;
+}
+
+label[for="jogador1"]:focus,
+input[name="jogador1"]:focus {
+  animation: pulse 1s ease-in-out infinite;
+}
+
+#resultado-final {
+  position: absolute;
+  top: 455px;
+  margin: 0 auto;
+  opacity: 0;
+  transition: all 1s ease-in-out;
+}
+
+#resultado-final h3 {
+  text-align: center;
+  color: #c1d604;
+  font-size: 1.8rem;
+  margin: 0 auto;
+}
+
+#resultado-final p {
+  color: #f2f2f2;
+  font-size: 1.5rem;
+  text-align: center;
+  margin: 0 auto;
+}
+
+/* MEDIA QUERY */
+
+@media screen and (min-width: 381px) and (max-width: 480px) {
+
+  #img-start {
+    width: 55%;
+  }
+
+  #img-winner {
+    width: 85%;
+    height: 75%;
+  }
+
+  .board-box {
+    height: 45vh;
+  }
+
+  .board {
+    height: 100%;
+  }
+
+  .tile {
+    width: 22vw;
+    height: 85px;
+    margin: 3px;
+  }
+
+  .tile span img {
+    width: 21vw;
+    height: 80px;
+  }
+
+  .btn-start {
+    margin-top: 3rem;
+  }
+
+  .my-input-group:nth-child(1) {
+    margin-top: 1.2rem;
+  }
+
+  input[type="text"] {
+    position: absolute;
+    left: 180px;
+    bottom: 14px;
+    width: 50%;
+    font-size: .9rem;
+  }
+
+  label {
+    margin-bottom: 1.25rem;
+    font-size: 1.3rem;
+    margin-left: -50%;
+  }
+
+  #resultado-final {
+    top: 62%;
+  }
+}
+
+@media screen and (min-width: 600px) and (max-width: 960px) {
+  #img-start {
+    width: 45%;
+  }
+
+  .logo-img img {
+    height: 70px;
+  }
+
+  #img-winner {
+    width: 80%;
+    height: 86%;
+  }
+
+  .board-box {
+    height: 50vh;
+  }
+
+  .board {
+    height: 90%;
+  }
+
+  .memory-item {
+    height: 100%;
+  }
+
+  .tile {
+    width: 21vw;
+    height: 25%;
+    margin: 5px;
+  }
+
+  .tile span img {
+    width: 20vw;
+    height: 95%;
+  }
+
+  .btn-start {
+    margin-top: 2.5rem;
+    width: 30%;
+    padding: 14px;
+  }
+
+  form {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 10vh;
+  }
+
+  .my-input-group {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    flex-direction: column;
+    flex-basis: 300px;
+    width: 80%;
+    text-align: center;
+    align-items: center;
+  }
+
+  input[type="text"] {
+    position: static;
+    /* left: 45%; */
+    /* bottom: -50%; */
+    width: 80%;
+    font-size: 1rem;
+    padding: 12px;
+  }
+
+  label {
+    margin: 0px auto 10px auto;
+    font-size: 1.3rem;
+    position: static;
+  }
+
+  #resultado-final {
+    top: 65%;
+    width: 50%;
+    height: 12vh;
+  }
+}
+
+@media screen and (min-width: 961px) and (max-width: 1199px) {
+  #img-start {
+    width: 45%;
+  }
+
+  .logo-img img {
+    height: 70px;
+  }
+
+  #img-winner {
+    width: 78%;
+    height: 93%;
+    top: 8%;
+  }
+
+  .board-box {
+    height: 50vh;
+  }
+
+  .board {
+    height: 90%;
+    width: 70vw;
+  }
+
+  .memory-item {
+    height: 100%;
+  }
+
+  .tile {
+    width: 15vw;
+    height: 25%;
+    margin: 5px;
+  }
+
+  .tile span img {
+    width: 14.5vw;
+    height: 95%;
+  }
+
+  .btn-start {
+    margin-top: 2.5rem;
+    width: 30%;
+    padding: 14px;
+  }
+
+  form {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 10vh;
+  }
+
+  .my-input-group {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    flex-direction: column;
+    flex-basis: 300px;
+    width: 80%;
+    text-align: center;
+    align-items: center;
+  }
+
+  input[type="text"] {
+    position: static;
+    /* left: 45%; */
+    /* bottom: -50%; */
+    width: 80%;
+    font-size: 1rem;
+    padding: 12px;
+  }
+
+  label {
+    margin: 0px auto 10px auto;
+    font-size: 1.3rem;
+    position: static;
+  }
+
+  #resultado-final {
+    top: 65%;
+    width: 50%;
+    height: 12vh;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  #img-start {
+    width: 45%;
+  }
+
+  .logo-img img {
+    height: 85px;
+    width: 35%;
+  }
+
+  #img-winner {
+    width: 78%;
+    height: 93%;
+    top: 8%;
+  }
+
+  #memory-game {
+    height: calc(100vh - 121px);
+  }
+
+  .board-box {
+    height: 50vh;
+    width: 100%;
+  }
+
+  .board {
+    height: 80%;
+    width: 35vw;
+    top: 28%;
+  }
+
+  .memory-item {
+    height: 100%;
+  }
+
+  .tile {
+    width: 7vw;
+    height: 25%;
+    margin: 5px;
+  }
+
+  .tile span img {
+    width: 6.6vw;
+    height: 95%;
+  }
+
+  .btn-start {
+    margin-top: 2.5rem;
+    width: 15%;
+    padding: 14px;
+  }
+
+  form {
+    top: 62%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 10vh;
+    position: absolute;
+  }
+
+  .my-input-group {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    flex-direction: column;
+    flex-basis: 300px;
+    width: 80%;
+    text-align: center;
+    align-items: center;
+  }
+
+  input[type="text"] {
+    position: static;
+    /* left: 45%; */
+    /* bottom: -50%; */
+    width: 80%;
+    font-size: 1rem;
+    padding: 12px;
+  }
+
+  label {
+    margin: 0px auto 10px auto;
+    font-size: 1.3rem;
+    position: static;
+  }
+
+  #resultado-final {
+    top: 62%;
+    width: 50%;
+    height: 12vh;
+  }
+}

@@ -1,0 +1,80 @@
+/* @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap'); */
+* {
+  font-family: 'Montserrat', sans-serif;
+}
+
+#container-cards {
+  min-height: calc(100vh - 92px);
+}
+
+#tictactoe,
+#forca,
+#memory {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.card {
+  border: none;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  /* overflow: hidden; */
+  position: relative;
+  transition: transform 0.8s ease-in-out, opacity 0.8s ease-in-out, visibility 0.8s ease-in-out;
+}
+
+.card:hover {
+  transform: scale(1.07);
+  transition: transform 0.5s ease-in-out;
+}
+
+.card .card-img-top {
+  height: 150px;
+  object-fit: contain;
+  width: 60%;
+  z-index: 0;
+  margin-top: 1rem;
+}
+
+.card .card-body {
+  padding: 1rem;
+}
+
+.card .card-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.card .card-text {
+  font-size: 1rem;
+  margin-bottom: 1rem;
+}
+
+.btn-wellcome {
+  width: 80%;
+  margin-right: 10%;
+  margin-left: 10%;
+  padding: 10px 24px;
+}
+
+/* .card .btn-wellcome {
+  background-color: #f63946;
+  color: #fff;
+  border: none;
+  border-radius: 25px;
+  color: #000;
+  display: block;
+  font-size: 1rem;
+  font-weight: bold;
+  margin-top: auto;
+  padding: 0.5rem 1rem;
+  text-align: center;
+  text-decoration: none;
+  transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+
+.card .btn-wellcome:hover {
+  background-color: #f63946ec;
+  color: #fff;
+} */

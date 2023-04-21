@@ -1,0 +1,239 @@
+.game {
+  width: 60%;
+  height: 55%;
+}
+
+.board {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  width: 100%;
+  margin: 0 auto;
+  /* border: 2px solid #fff; */
+}
+
+.cell {
+  flex-basis: 26%;
+  height: 135px;
+  margin: -2px 0 0 -2px;
+  background-color: #333;
+  border: 2px solid #fff;
+  cursor: pointer;
+}
+
+/* .cell {
+  flex-basis: 26%;
+  height: 145px;
+  margin: -2px 0 0 -2px;
+  background-color: #333;
+  border: 2px solid #fff;
+  cursor: pointer;
+} */
+
+.cell:hover {
+  background-color: #444;
+}
+
+.cell.x::before {
+  content: "X";
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 80px;
+  line-height: 1;
+  color: #fff;
+}
+
+.cell.o::before {
+  content: "O";
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 80px;
+  line-height: 1;
+  color: #07A82E;
+}
+
+.players {
+  position: relative;
+  width: 80%;
+  height: 30%;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.form-player {
+  margin-top: 1.5rem;
+}
+
+.form-group:nth-child(1) {
+  margin-bottom: 8px;
+}
+
+#new-game {
+  width: 50%;
+  border-radius: 0;
+  margin-top: 24px;
+}
+
+input[type="text"],
+button {
+  padding: 10px 15px;
+  font-size: 16px;
+  border-radius: 20px;
+  border: none;
+  background-color: #f63c48;
+  color: #fff;
+  margin: 0 10px;
+}
+
+input[type="text"]::placeholder {
+  color: #fff;
+}
+
+.timeP1,
+.timeP2 {
+  animation: pulse 0.5s ease-in-out infinite alternate;
+}
+
+@keyframes pulse {
+  from {
+    transform: scale(1);
+  }
+
+  to {
+    transform: scale(1.10);
+  }
+}
+
+@keyframes rotate-pulse {
+  0% {
+    transform: rotate(0deg) scale(1);
+  }
+
+  50% {
+    transform: rotate(360deg) scale(1.15);
+  }
+
+  100% {
+    transform: rotate(0deg) scale(1);
+  }
+}
+
+button:hover {
+  background-color: #f63c488a;
+}
+
+.winner-message {
+  position: absolute;
+  top: 10%;
+  font-size: 24px;
+  font-weight: bold;
+  margin-top: 20px;
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.8s ease-in-out;
+  /* display: none; */
+}
+
+.winner span {
+  color: #f63c48;
+}
+
+.tie span {
+  color: #FA6730;
+}
+
+/* MEDIA QUERY */
+
+@media (max-width: 575px) {
+  .game {
+    width: 100%;
+    height: 55%;
+  }
+
+  .game h1 {
+    display: none;
+  }
+
+  .board {
+    width: 100%;
+    height: 98%;
+  }
+
+  .cell {
+    flex-basis: 33.3%;
+    height: 33.5%;
+  }
+
+  .players {
+    width: 100%;
+    height: 30%;
+    justify-content: start;
+    margin-top: 8px;
+  }
+
+  input[type="text"],
+  button {
+    padding: 8px 12px;
+    font-size: 14px;
+    border-radius: 20px;
+    border: none;
+    background-color: #f63c48;
+    color: #fff;
+    margin: 0 8px;
+  }
+}
+
+@media (min-width: 576px) and (max-width: 767px) {
+  .game {
+    width: 90%;
+    height: 40%;
+  }
+
+  .board {
+    width: 100%;
+  }
+
+  .cell {
+    flex-basis: 30%;
+    height: 110px;
+  }
+
+  .players {
+    width: 70%;
+    height: 25%;
+    justify-content: center;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  .game {
+    width: 100%;
+    height: 30%;
+    margin-top: 1rem;
+  }
+
+  .board {
+    width: 100%;
+    height: 90%;
+  }
+
+  .cell {
+    flex-basis: 33.3%;
+    height: 33.5%;
+  }
+
+  .players {
+    width: 80%;
+    height: 30%;
+    justify-content: start;
+    margin-top: 1rem;
+  }
+}
