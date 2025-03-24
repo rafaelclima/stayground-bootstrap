@@ -30,7 +30,7 @@
 
 ## 📸 Capturas de Tela
 
-![enter image description here](./.gitassets/pc_01)
+![StayGround](https://github.com/rafaelclima/stayground-bootstrap/blob/master/.gitassets/capa.png?raw=true)
 
 ## 📜 Licença
 
